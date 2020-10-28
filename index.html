@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face mask</title>
+		<meta charset="utf-8">
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
+			body {
+				font-family: 'Lato';
+				background-color: #f0f0f0;
+				margin: 0px auto;
+				max-width: 1150px;
+			}
+
+
+			#overlay, #webgl {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+			}
+
+			#videoel {
+				-o-transform : scaleX(-1);
+				-webkit-transform : scaleX(-1);
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
+			}
+
+			#container {
+				position : relative;
+				width : 370px;
+				/*margin : 0px auto;*/
+			}
+
+			#content {
+				margin-top : 70px;
+				margin-left : 100px;
+				margin-right : 100px;
+				max-width: 950px;
+			}
+
+			h2 {
+				font-weight : 400;
+			}
+
+			.masks {
+				display: none;
+			}
+
+			.btn {
+						font-family: 'Lato';
+						font-size: 16px;
+			}
+
+			.nogum {
+						display : none;
+			}
+
+
+
+			.hide {
+				display : none;
+			}
+
+			.nohide {
+				display : block;
+			}
+		</style>
+
+	</head>
+	<body>
+		<!-- <script src="./js/libs/dat.gui.min.js"></script> -->
+		<script src="./js/libs/utils.js"></script>
+		<script src="./js/libs/webgl-utils.js"></script>
+		<script src="./build/clmtrackr.js"></script>
+		<script src="./models/model_pca_20_svm.js"></script>
+		<!-- <script src="./js/libs/Stats.js"></script> -->
+		<script src="./js/face_deformer.js"></script>
+		<script src="./masks.js"></script>
+		
+		<div id="content">
+			<h2>Face mask</h2>
+			<div id="container">
+				<video id="videoel" width="400" height="300" preload="auto" playsinline autoplay>
+				</video>
+				<canvas id="overlay" width="400" height="300"></canvas>
+				<canvas id="webgl" width="400" height="300"></canvas>
+			</div>
+			<br/>
+			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo()" id="startbutton"></input>
+			<!-- <select name="mask" id="selectmask">
+				<option value="0">Average face</option>
+				<option value="1">Mona Lisa</option>
+				<option value="2">Ironman</option>
+				<option value="3">Skull mask</option>
+				<option value="4">Sean Connery</option>
+				<option value="5">Audrey</option>
+				<option value="6">acne</option>
+			</select> -->
+			
+			<!-- <img id="average" class="masks" src="./media/average.png"></img>
+			<img id="monalisa" class="masks" src="./media/joconde.jpg"></img>
+			<img id="ironman" class="masks" src="./media/ironman.jpg"></img>
+			<img id="sean" class="masks" src="./media/SeanConnery.jpg"></img>
+			<img id="skull" class="masks" src="./media/skullmask.jpg"></img>
+			<img id="audrey" class="masks" src="./media/spooky.jpg"></img> -->
+			<img id="acne" class="masks" src="./media/acne.jpg"></img>
+			<script>
+
+
+				/*********** Setup of video/webcam and checking for webGL support *********/
+
+				// function enablestart() {
+				// 	var startbutton = document.getElementById('startbutton');
+				// 	startbutton.value = "start";
+				// 	startbutton.disabled = null;
+				// }
+
+				// // var insertAltVideo = function(video) {
+
+				// // 	if (supports_video()) {
+				// // 		if (supports_webm_video()) {
+				// // 			video.src = "./media/cap13_edit2.webm";
+				// // 		} else if (supports_h264_baseline_video()) {
+				// // 			video.src = "./media/cap13_edit2.mp4";
+				// // 		} else {
+				// // 			return false;
+				// // 		}
+				// // 		fd.init(webgl_overlay);
+				// // 		return true;
+				// // 	} else return false;
+				// // }
+
+
+
+
+
+				
+
+			</script>
+		</div>
+		<script src="enableVideo.js"></script>
+		<script src="faceTrack.js"></script>
+	</body>
+</html>
